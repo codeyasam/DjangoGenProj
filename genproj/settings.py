@@ -130,3 +130,5 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = '/' #home view
+
+AUTHENTICATION_BACKENDS = ['auth_app.models.EmailOrUsernameModel']
