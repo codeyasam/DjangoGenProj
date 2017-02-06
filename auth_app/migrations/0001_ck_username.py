@@ -8,6 +8,8 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     operations = [
+    	#up and down in rails
+    	#migrations.RunSQL("""ALTER TABLE auth_user DROP CONSTRAINT ck_nospecialchars_username """),
     	migrations.RunSQL("""ALTER TABLE auth_user ADD CONSTRAINT ck_nospecialchars_username
-    	CHECK (username NOT LIKE '%[^A-Z0-9]%'); """)
+    	CHECK (username ~ '^[a-zA-Z0-9]*$'); """),
     ]
